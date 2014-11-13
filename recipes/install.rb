@@ -40,7 +40,7 @@ when 'debian', 'ubuntu'
     source "#{Chef::Config[:file_cache_path]}/mesos.deb"
     not_if { ::File.exists? '/usr/local/sbin/mesos-master' }
   end
-when 'rhel', 'centos', 'amazon', 'scientific'
+when 'redhat', 'centos', 'amazon', 'scientific'
   %w{ unzip libcurl }.each do |pkg|
     yum_package pkg do
       action :install
